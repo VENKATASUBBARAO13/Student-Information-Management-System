@@ -101,7 +101,7 @@ Frontend (HTML/CSS/JavaScript)
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Student-Information-Management-System.git
+git clone https://github.com/VENKATASUBBARAO13/Student-Information-Management-System.git
 cd ASISST_SIMS
 ```
 
