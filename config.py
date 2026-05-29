@@ -12,7 +12,7 @@ DB_CONFIG = {
     "host":     "localhost",
     "port":     3306,
     "user":     "root",
-    "password": "naren2003",        # <-- PUT YOUR MYSQL PASSWORD HERE (leave empty if none)
+    "password": "",        # <-- PUT YOUR MYSQL PASSWORD HERE (leave empty if none)
     "database": "asisst_sims",
     "charset":  "utf8mb4",
     "use_unicode":        True,
