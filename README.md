@@ -1,6 +1,6 @@
 # 🎓 Student Information Management System
 
-A full-stack Student Information Management System built using **Flask, MySQL, HTML, CSS, and JavaScript**. This application helps educational institutions manage student records, marks, attendance, certificates, and academic information through dedicated Admin and Student portals.
+A full-stack **Student Information Management System (SIMS)** built using **Flask, MySQL, HTML, CSS, and JavaScript**. This application enables educational institutions to efficiently manage student records, academic performance, attendance, certificates, and user accounts through dedicated **Admin** and **Student** portals.
 
 ---
 
@@ -14,6 +14,7 @@ A full-stack Student Information Management System built using **Flask, MySQL, H
 * Reset student passwords
 * View activity logs and dashboard statistics
 * Filter students by branch and academic year
+* Monitor overall student performance
 
 ### 👨‍🎓 Student Portal
 
@@ -22,15 +23,16 @@ A full-stack Student Information Management System built using **Flask, MySQL, H
 * Monitor attendance percentage
 * Download uploaded certificates
 * Change account password
+* Access academic records securely
 
 ### 🔒 Security Features
 
 * Role-Based Access Control (RBAC)
 * PBKDF2-SHA256 password hashing
 * Secure session management
-* Parameterized SQL queries
-* PDF-only file uploads
+* Parameterized SQL queries to prevent SQL injection
 * Password reset functionality
+* Restricted PDF certificate uploads
 
 ---
 
@@ -47,11 +49,26 @@ A full-stack Student Information Management System built using **Flask, MySQL, H
 
 * HTML5
 * CSS3
-* Vanilla JavaScript
+* JavaScript (Vanilla JS)
 
 ### Database
 
-* MySQL 8.0
+* MySQL 8.0+
+
+---
+
+## 🎯 Key Concepts Demonstrated
+
+* Full Stack Web Development
+* REST API Development
+* Authentication & Authorization
+* Session Management
+* Role-Based Access Control (RBAC)
+* CRUD Operations
+* Relational Database Design
+* File Upload Management
+* Password Hashing & Security
+* Activity Logging & Auditing
 
 ---
 
@@ -96,13 +113,13 @@ Frontend (HTML/CSS/JavaScript)
 
 ---
 
-## ⚙️ Installation
+## ⚙️ Installation Guide
 
-### 1. Clone Repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/VENKATASUBBARAO13/Student-Information-Management-System.git
-cd .\Student-Information-Management-System-main
+cd Student-Information-Management-System
 ```
 
 ### 2. Create Virtual Environment
@@ -119,35 +136,73 @@ Windows:
 venv\Scripts\activate
 ```
 
+Linux/macOS:
+
+```bash
+source venv/bin/activate
+```
+
 ### 4. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 5. Setup MySQL Database
+### 5. Create MySQL Database
 
-Run:
+Open MySQL and run:
 
-```bash
-mysql -u root -p < schema.sql
+```sql
+CREATE DATABASE asisst_sims;
 ```
 
-### 6. Configure Database
+### 6. Import Database Schema
 
-Update database credentials in:
+```bash
+mysql -u root -p asisst_sims < schema.sql
+```
+
+### 7. Configure Database Credentials
+
+Update your MySQL credentials inside:
 
 ```python
 config.py
 ```
 
-### 7. Run Application
+Example:
+
+```python
+DB_CONFIG = {
+    "host": "localhost",
+    "user": "root",
+    "password": "your_mysql_password",
+    "database": "asisst_sims"
+}
+```
+
+### 8. Create Default Admin Account
+
+```bash
+python create_admin.py
+```
+
+Default credentials:
+
+```text
+Username: admin
+Password: Admin@123
+```
+
+⚠️ Change the password after first login.
+
+### 9. Run the Application
 
 ```bash
 python app.py
 ```
 
-Open:
+Open your browser and visit:
 
 ```text
 http://localhost:5000
@@ -155,20 +210,52 @@ http://localhost:5000
 
 ---
 
-## 🔑 Login Credentials
+## 🔑 Authentication
 
-### Admin
+### Admin Login
 
 ```text
 Username: admin
 Password: Admin@123
 ```
 
-### Student
+### Student Login
 
 ```text
-Username: Roll Number
+Username: Student Roll Number
 Password: Assigned by Admin
+```
+
+---
+
+## 📡 API Endpoints
+
+### Authentication
+
+```http
+POST /api/login
+POST /api/logout
+POST /api/forgot-password
+POST /api/reset-password
+POST /api/change-password
+```
+
+### Student
+
+```http
+GET /api/student/profile
+GET /api/student/marks
+GET /api/student/attendance
+GET /api/student/certificates
+```
+
+### Admin
+
+```http
+GET    /api/admin/students
+POST   /api/admin/students
+PUT    /api/admin/students
+DELETE /api/admin/students
 ```
 
 ---
@@ -180,25 +267,26 @@ Password: Assigned by Admin
 * Student registration
 * Student profile management
 * Search and filtering
+* Branch-wise organization
 
 ### Marks Management
 
-* Internal marks
-* External marks
+* Internal and external marks
 * GPA calculation
 * Grade generation
+* Academic performance tracking
 
 ### Attendance Management
 
-* Daily attendance tracking
 * Subject-wise attendance
-* Percentage calculation
+* Attendance percentage calculation
+* Attendance monitoring
 
 ### Certificate Management
 
-* PDF upload
+* PDF certificate upload
 * Certificate download
-* Download tracking
+* Download tracking and logging
 
 ### Activity Logging
 
@@ -210,53 +298,70 @@ Password: Assigned by Admin
 
 ## 📸 Screenshots
 
-Add screenshots here:
+Add screenshots of the following pages:
 
-* Login Page
-* Admin Dashboard
-* Student Dashboard
-* Student Management
-* Marks Module
-* Attendance Module
-* Certificate Module
+### Login Page
+
+![Login Page](screenshots/login-page.png)
+
+### Admin Dashboard
+
+![Admin Dashboard](screenshots/admin-dashboard.png)
+
+### Student Dashboard
+
+![Student Dashboard](screenshots/student-dashboard.png)
+
+### Student Management
+
+![Student Management](screenshots/student-management.png)
+
+### Attendance Module
+
+![Attendance Module](screenshots/attendance-module.png)
+
+### Marks Module
+
+![Marks Module](screenshots/marks-module.png)
 
 ---
 
-## 🎯 Learning Outcomes
+## 🎓 Learning Outcomes
 
-This project helped me gain hands-on experience in:
+This project provided hands-on experience in:
 
 * Flask Web Development
-* REST API Development
-* MySQL Database Design
+* REST API Design
+* MySQL Database Integration
 * Authentication & Authorization
 * Session Management
+* Secure Password Storage
 * File Upload Handling
 * Frontend Development
-* Database Integration
-* Git & GitHub Version Control
+* Database Design
+* Git & GitHub Workflow
 
 ---
 
 ## 🔮 Future Enhancements
 
 * Email Notifications
+* Bulk Student Import
 * Bulk Marks Upload
 * Timetable Management
-* Exam Scheduling
+* Exam Scheduling System
 * Parent Portal
-* Student Photo Upload
+* Student Profile Photos
 * PDF & Excel Report Generation
 * Docker Deployment
 * PostgreSQL Support
+* Cloud Deployment (AWS/Azure)
 
 ---
 
 ## 👨‍💻 Author
 
 **Venkata Subbarao**
-
-Aspiring Cloud Engineer | Python Developer
 
 GitHub: https://github.com/VENKATASUBBARAO13
 
