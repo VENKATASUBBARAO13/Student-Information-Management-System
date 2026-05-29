@@ -312,10 +312,6 @@ Add screenshots of the following pages:
 
 ![Student Dashboard](screenshots/student-dashboard.png)
 
-### Student Management
-
-![Student Management](screenshots/student-management.png)
-
 ### Attendance Module
 
 ![Attendance Module](screenshots/attendance-module.png)
