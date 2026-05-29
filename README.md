@@ -102,7 +102,6 @@ Frontend (HTML/CSS/JavaScript)
 
 ```bash
 git clone https://github.com/VENKATASUBBARAO13/Student-Information-Management-System.git
-cd ASISST_SIMS
 ```
 
 ### 2. Create Virtual Environment
