@@ -361,7 +361,7 @@ This project provided hands-on experience in:
 
 GitHub: https://github.com/VENKATASUBBARAO13
 
-LinkedIn: https://www.linkedin.com/in/venkatasubbarao13
+LinkedIn: www.linkedin.com/in/ventrapragada-venkata-subbarao
 
 ---
 
