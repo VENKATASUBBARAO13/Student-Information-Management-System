@@ -102,6 +102,7 @@ Frontend (HTML/CSS/JavaScript)
 
 ```bash
 git clone https://github.com/VENKATASUBBARAO13/Student-Information-Management-System.git
+cd .\Student-Information-Management-System-main
 ```
 
 ### 2. Create Virtual Environment
